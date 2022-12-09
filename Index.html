@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Leaflet Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"/>
+    <style>
+
+        
+   html { height:100%;}
+    body {
+        height:100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    #map {
+        width: 100%;
+        margin: 0 auto;
+        height: 95%;
+    }
+    .info {
+    z-index: 1000;
+    position: absolute;
+    right: 40%;
+    top: 5%;
+    padding: 6px 8px;
+    font: 14px Arial, Helvetica, sans-serif;
+    text-align: center;
+    background: white;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.info h1 {
+    font-size: 16px;
+    margin: 0 0 5px;
+    color: #777777;
+}
+
+
+.legend {
+    line-height: 18px;
+    color: #333333;
+    font-family: 'Arial', Helvetica, sans-serif;
+    padding: 6px 8px;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+.legend i {
+    width: 30px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+
+
+.legend p {
+    font-size: 12px;
+    line-height: 18px;
+    margin: 0;
+}
+    </style>
+</head>
+
+
+
+<body>
+    <!-- Our web map and content will go here -->
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <div id="map" style="width: 1000px; height: 600px">
+    </div>
+    <script>
+        var map = L.map('map', {center: [37.3387, -121.8853], zoom: 10});
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { attribution: '© OpenStreetMap' }).addTo(map);
+        map.doubleClickZoom.disable();
+      
+         // add point marker
+         var myDataPoint = L.marker([37.236560, -121.777940]).addTo(map);
+        myDataPoint.bindPopup("San Andreas Regional Center");
+        myDataPoint.bindPopup("<h3>San Andreas Regional Center</h3><p>6203 San Ignacio Ave Suite 200, San Jose, CA 95119<br>Information about Center.</p>");
+
+        var myDataPoint = L.marker([37.332420, -121.891620]).addTo(map);
+        myDataPoint.bindPopup("San Jose Disability Services");
+        myDataPoint.bindPopup("<h3>San Jose Disability Services</h3><p>100 W San Fernando St, San Jose, CA 95113<br>Information about Center.</p>");
+
+        var myDataPoint = L.marker([37.252040, -121.806180]).addTo(map);
+        myDataPoint.bindPopup("Social Vocational Services");
+        myDataPoint.bindPopup("<h3>Social Vocational Services</h3><p>124 Blossom Hill Rd f, San Jose, CA 95123<br>Information about Center.</p>");
+
+        var myDataPoint = L.marker([37.250650, -121.854600]).addTo(map);
+        myDataPoint.bindPopup("Trinity CHANGE");
+        myDataPoint.bindPopup("<h3>Trinity CHANGE</h3><p>835 Blossom Hill Rd #116, San Jose, CA 95123<br>Information about Center.</p>");
+
+        var myDataPoint = L.marker([37.264130, -121.923420]).addTo(map);
+        myDataPoint.bindPopup("Aspire Advocacy, LLC");
+        myDataPoint.bindPopup("<h3>Aspire Advocacy, LLC</h3><p>Todd Way, San Jose, CA 95124<br>Information about Center</p>");
+
+        var myDataPoint = L.marker([37.379500, -121.942070]).addTo(map);
+        myDataPoint.bindPopup("Social Vocational Services");
+        myDataPoint.bindPopup("<h3>Social Vocational Services</h3><p>471 Gianni St, Santa Clara, CA 95054<br>Information about Center</p>");
+
+        var myDataPoint = L.marker([37.343010, -121.877860]).addTo(map);
+        myDataPoint.bindPopup("Silicon Valley Independent Living Center");
+        myDataPoint.bindPopup("<h3>Silicon Valley Independent Living Center</h3><p>25 N 14th St #1000, San Jose, CA 95112<br>Information about Center</p>");
+
+        var myDataPoint = L.marker([37.343070, -121.865970]).addTo(map);
+        myDataPoint.bindPopup("Rellysworld Support Services LLC");
+        myDataPoint.bindPopup("<h3>Rellysworld Support Services LLC</h3><p>1064 E San Antonio St, San Jose, CA 95116<br>Information about Center</p>");
+
+        var myDataPoint = L.marker([37.294170, -121.954610]).addTo(map);
+        myDataPoint.bindPopup("Life Services Alternatives, Inc.");
+        myDataPoint.bindPopup("<h3>Silicon Valley Independent Living Center</h3><p>260 W Hamilton Ave, Campbell, CA 95008<br>Information about Center</p>");
+
+        var myDataPoint = L.marker([37.364426, -121.848607]).addTo(map);
+        myDataPoint.bindPopup("Visionary Lifestyles, LLC");
+        myDataPoint.bindPopup("<h3>Visionary Lifestyles, LLC</h3><p>2324 Montpelier Dr # 7, San Jose, CA 95116<br>Information about Center</p>");
+
+        var myDataPoint = L.marker([37.32830810546875, -121.9502182006836]).addTo(map);
+        myDataPoint.bindPopup("SDCARA - Deaf Counseling Advocacy & Referral Agency");
+        myDataPoint.bindPopup("<h3>SDCARA - Deaf Counseling Advocacy & Referral Agency</h3><p>650 N Winchester Blvd #3, San Jose, CA 95128<br>Information about Center</p>");
+
+        var myDataPoint = L.marker([37.317745208740234, -121.91388702392578]).addTo(map);
+        myDataPoint.bindPopup("Positive Solutions, Inc.");
+        myDataPoint.bindPopup("<h3>Positive Solutions, Inc.</h3><p>555 Meridian Ave Suite D, San Jose, CA 95126<br>Information about Center</p>");
+
+        var myDataPoint = L.marker([37.3147696, -121.9755135]).addTo(map);
+        myDataPoint.bindPopup("Absolute Senior Solutions");
+        myDataPoint.bindPopup("Absolute Senior Solutions</h3><p>4125 Blackford Ave Suite 140, San Jose, CA 95117<br>Information about Center</p>");
+
+        var myDataPoint = L.marker([37.001889, -121.566608]).addTo(map);
+        myDataPoint.bindPopup("Social Vocational Services #2");
+        myDataPoint.bindPopup("Social Vocational Services #2</h3><p>7101 Monterey Hwy, Gilroy, CA 95020<br>Information about Center</p>");
+
+        var myDataPoint = L.marker([37.0255325, -121.57204]).addTo(map);
+        myDataPoint.bindPopup("Hope Services");
+        myDataPoint.bindPopup("Hope Services</h3><p>8855 Murray Ave, Gilroy, CA 95020<br>Information about Center</p>");
+
+
+
+
+
+
+var neighborhoodsLayer = null;
+$.getJSON("Data/Demographics_By_Census_Tract.geojson",function(data){
+    neighborhoodsLayer = L.geoJson(data, {
+        style: styleFunc,
+        onEachFeature: onEachFeatureFunc
+    }).addTo(map);
+});
+
+
+
+// Set style function that sets fill color property equal to blood lead
+function styleFunc(feature) {
+    return {
+        fillColor: setColorFunc(feature.properties.DISABLEDTOTAL),
+        fillOpacity: 0.7,
+        weight: 1,
+        opacity: 1,
+        color: '#5cb8a4',
+        dashArray: '3'
+    };
+}
+
+// Set function for color ramp, you can use a better palette
+function setColorFunc(density){
+    return density > 600 ? '#321163' :
+           density > 400 ? '#654791' :
+           density > 200? '#a28bc4' :
+           density > 0 ? '#d1c3e6' :
+                         '#BFBCBB';
+};
+
+// Now we’ll use the onEachFeature option to add the listeners on our state layers:
+        function onEachFeatureFunc(feature, layer){
+			layer.on({
+				mouseover: highlightFeature,
+				mouseout: resetHighlight,
+				click: zoomFeature
+			});
+			layer.bindPopup('Total Disabled People: '+feature.properties.DISABLEDTOTAL);
+		}
+		
+		// Now let’s make the states highlighted visually in some way when they are hovered with a mouse. First we’ll define an event listener for layer mouseover event:
+		function highlightFeature(e){
+			var layer = e.target;
+
+			layer.setStyle({
+				weight: 5,
+				color: '#666',
+				dashArray: '',
+				fillOpacity: 0.7
+			});
+			// for different web browsers
+			if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+		        layer.bringToFront();
+		    }
+		}
+
+
+// Define what happens on mouseout:
+        function resetHighlight(e) {
+			neighborhoodsLayer.resetStyle(e.target);
+		}
+		
+		// As an additional touch, let’s define a click listener that zooms to the state: 
+		function zoomFeature(e){
+			console.log(e.target.getBounds());
+			map.fitBounds(e.target.getBounds().pad(1.5));
+		}
+
+
+
+
+
+// Create Leaflet Control Object for Legend
+var legend = L.control({position: 'bottomright'});
+
+// Function that runs when legend is added to map
+legend.onAdd = function (map) {
+    // Create Div Element and Populate it with HTML
+    var div = L.DomUtil.create('div', 'legend');            
+    div.innerHTML += '<b>Number of Disabled People</b><br />';
+    div.innerHTML += 'by census tract<br />';
+    div.innerHTML += '<br>';
+    div.innerHTML += '<i style="background: #321163"></i><p>600+</p>';
+    div.innerHTML += '<i style="background: #654791"></i><p>400-600</p>';
+    div.innerHTML += '<i style="background: #a28bc4"></i><p>200-400</p>';
+    div.innerHTML += '<i style="background: #d1c3e6"></i><p>0-200</p>';
+    div.innerHTML += '<hr>';
+    div.innerHTML += '<i style="background: #BFBCBB"></i><p>No Data</p>';
+    
+    // Return the Legend div containing the HTML content
+    return div;
+};
+
+// Add Legend to Map
+legend.addTo(map);
+
+// Add Scale Bar to Map
+L.control.scale({position: 'bottomleft'}).addTo(map);
+
+
+// Define what happens on mouseout:
+
+function highlightFeature(e){
+    var layer = e.target;
+
+    layer.setStyle({
+        weight: 5,
+        color: '#363d2b',
+        dashArray: '',
+        fillOpacity: 0.7
+    });
+
+    // for different web browsers
+    if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+        layer.bringToFront();
+    }
+}
+
+
+function resetHighlight(e) {
+    neighborhoodsLayer.resetStyle(e.target);
+}  
+
+
+
+// As an additional touch, let’s define a click listener that zooms to the state: 
+function zoomFeature(e){
+    console.log(e.target.getBounds());
+    map.fitBounds(e.target.getBounds().pad(1.5));
+}
+
+
+
+
+  
+// create a polyline
+      var myDataLine = L.polyline([[39.957578, -75.162355], 
+                        [39.962403, -75.161638],
+                        [39.971466, -75.159464],
+                        [39.978688, -75.157887],
+                        [39.987009, -75.156035],
+                        [39.986318, -75.153225],
+                        [39.981397, -75.153458],
+                        [39.979940, -75.155355]
+                        ],
+                        {color: 'black', weight: 5}).addTo(map);
+
+                        
+
+
+        // Create an Empty Popup
+        var popup = L.popup();
+
+        // Write function to set Properties of the Popup
+        function onMapClick(e) {
+            popup
+                .setLatLng(e.latlng)
+                .setContent("You clicked the map at " + e.latlng.toString())
+                .openOn(map);
+        }
+        
+        // Listen for a click event on the Map element
+        map.on('click', onMapClick);
+
+
+    </script>
+</body>
+</html>
